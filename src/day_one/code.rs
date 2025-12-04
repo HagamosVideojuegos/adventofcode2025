@@ -1,4 +1,3 @@
-use log::error;
 use std::env;
 
 pub fn main() {
