@@ -1,18 +1,18 @@
 use std::env;
 
 pub fn main() {
-    let sequence = match env::var("DAY_ONE_SEQUENCE") {
+    let input = match env::var("DAY_ONE_INPUT") {
         Ok(seq) => seq.split(' ').map(String::from).collect::<Vec<String>>(),
         Err(_) => {
-            eprintln!("SEQUENCE environment variable not found, using default sequence");
+            eprintln!("DAY_ONE_INPUT environment variable not found, using default sequence");
             vec!["L68".to_string(), "L30".to_string(), "R48".to_string(), "L5".to_string(),
                  "R60".to_string(), "L55".to_string(), "L1".to_string(), "L99".to_string(),
                  "R14".to_string(), "L82".to_string()]
         }
     };
 
-    part_one(&sequence);
-    part_two(&sequence);
+    part_one(&input);
+    part_two(&input);
 }
 
 fn part_one(sequence: &Vec<String>) {
