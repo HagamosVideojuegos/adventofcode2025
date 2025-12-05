@@ -34,8 +34,7 @@ pub fn main() {
 }
 
 fn part_one(matrix: &Matrix) -> u32 {
-    let current_matrix: Matrix = matrix.clone();
-    count(&current_matrix).code
+    count(matrix).code
 }
 
 fn part_two(matrix: &Matrix) -> u32 {
