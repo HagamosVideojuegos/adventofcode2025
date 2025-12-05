@@ -5,8 +5,12 @@ pub fn main() {
         Ok(seq) => seq.split(' ').map(String::from).collect::<Vec<String>>(),
         Err(_) => {
             eprintln!("DAY_THREE_INPUT environment variable not found, using default sequence");
-            vec!["987654321111111".to_string(), "811111111111119".to_string(), "234234234234278".to_string(),
-                 "818181911112111".to_string()]
+            vec![
+                "987654321111111".to_string(),
+                "811111111111119".to_string(),
+                "234234234234278".to_string(),
+                "818181911112111".to_string()
+            ]
         }
     };
 

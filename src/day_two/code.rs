@@ -5,11 +5,19 @@ pub fn main() {
         Ok(seq) => seq.split(',').map(String::from).collect::<Vec<String>>(),
         Err(_) => {
             eprintln!("DAY_TWO_INPUT environment variable not found, using default sequence");
-            vec!["11-22".to_string(), "95-115".to_string(), "998-1012".to_string(),
-                 "1188511880-1188511890".to_string(), "222220-222224".to_string(),
-                 "1698522-1698528".to_string(), "446443-446449".to_string(),
-                 "38593856-38593862".to_string(), "565653-565659".to_string(),
-                 "824824821-824824827".to_string(), "2121212118-2121212124".to_string()]
+            vec![
+                "11-22".to_string(),
+                "95-115".to_string(),
+                "998-1012".to_string(),
+                "1188511880-1188511890".to_string(),
+                "222220-222224".to_string(),
+                "1698522-1698528".to_string(),
+                "446443-446449".to_string(),
+                "38593856-38593862".to_string(),
+                "565653-565659".to_string(),
+                "824824821-824824827".to_string(),
+                "2121212118-2121212124".to_string()
+            ]
         }
     };
 
