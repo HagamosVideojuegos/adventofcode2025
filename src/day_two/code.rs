@@ -69,5 +69,5 @@ fn part_two(range: &Vec<String>) {
             }
         }
     }
-    println!("Secret code one: {code}")
+    println!("Secret code two: {code}")
 }
