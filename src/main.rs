@@ -3,9 +3,11 @@ mod day_two;
 mod day_three;
 mod day_four;
 mod day_five;
+mod day_six;
+mod input;
 
 fn main() {
-    let day: u8 = 5;
+    let day: u8 = 6;
 
     match day {
         1 => day_one::code::main(),
@@ -13,6 +15,7 @@ fn main() {
         3 => day_three::code::main(),
         4 => day_four::code::main(),
         5 => day_five::code::main(),
+        6 => day_six::code::main(),
         _ => println!("No valid day!")
     }
 }
