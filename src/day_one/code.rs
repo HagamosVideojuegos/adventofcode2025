@@ -1,10 +1,10 @@
-use std::env;
+use crate::input;
 
 pub fn main() {
-    let input = match env::var("DAY_ONE_INPUT") {
-        Ok(seq) => seq.split(' ').map(String::from).collect::<Vec<String>>(),
+    let input = match input::read_lines_for_day(1) {
+        Ok(lines) => lines,
         Err(_) => {
-            eprintln!("DAY_ONE_INPUT environment variable not found, using default sequence");
+            eprintln!("Couldn't read inputs\\day_1.txt, using default sequence");
             vec![
                 "L68".to_string(),
                 "L30".to_string(),
