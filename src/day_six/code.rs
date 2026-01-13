@@ -57,7 +57,6 @@ impl Homework {
         let mut homeworks = vec![];
         let calc_line: Vec<char> = input.last().unwrap().chars().collect();
         let number_lines = input.iter().take(input.len() - 1).collect::<Vec<&String>>();
-        // let calcs = calc_line.filter(|x| x.ne(&' ')).count();
         let mut first_char_index: Option<usize> = None;
         for i in 0..calc_line.len() {
             if calc_line[i] == ' ' {
