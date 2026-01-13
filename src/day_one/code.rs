@@ -1,24 +1,21 @@
 use crate::input;
 
 pub fn main() {
-    let input = match input::read_lines_for_day(1) {
-        Ok(lines) => lines,
-        Err(_) => {
-            eprintln!("Couldn't read inputs\\day_1.txt, using default sequence");
-            vec![
-                "L68".to_string(),
-                "L30".to_string(),
-                "R48".to_string(),
-                "L5".to_string(),
-                "R60".to_string(),
-                "L55".to_string(),
-                "L1".to_string(),
-                "L99".to_string(),
-                "R14".to_string(),
-                "L82".to_string()
-            ]
-        }
-    };
+    let input = input::read_lines_for_day(1).unwrap_or_else(|_| {
+        eprintln!("Couldn't read inputs\\day_1.txt, using default sequence");
+        vec![
+            "L68".to_string(),
+            "L30".to_string(),
+            "R48".to_string(),
+            "L5".to_string(),
+            "R60".to_string(),
+            "L55".to_string(),
+            "L1".to_string(),
+            "L99".to_string(),
+            "R14".to_string(),
+            "L82".to_string()
+        ]
+    });
 
     part_one(&input);
     part_two(&input);

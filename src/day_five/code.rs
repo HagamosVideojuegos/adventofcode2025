@@ -1,25 +1,22 @@
 use crate::input;
 
 pub fn main() {
-    let input = match input::read_lines_for_day(5) {
-        Ok(lines) => lines,
-        Err(_) => {
-            eprintln!("Couldn't read inputs\\day_5.txt, using default sequence");
-            vec![
-                "3-5".to_string(),
-                "10-14".to_string(),
-                "16-20".to_string(),
-                "12-18".to_string(),
-                "".to_string(),
-                "1".to_string(),
-                "5".to_string(),
-                "8".to_string(),
-                "11".to_string(),
-                "17".to_string(),
-                "32".to_string()
-            ]
-        }
-    };
+    let input = input::read_lines_for_day(5).unwrap_or_else(|_| {
+        eprintln!("Couldn't read inputs\\day_5.txt, using default sequence");
+        vec![
+            "3-5".to_string(),
+            "10-14".to_string(),
+            "16-20".to_string(),
+            "12-18".to_string(),
+            "".to_string(),
+            "1".to_string(),
+            "5".to_string(),
+            "8".to_string(),
+            "11".to_string(),
+            "17".to_string(),
+            "32".to_string()
+        ]
+    });
 
     let first = part_one(Ingredients::new(&input));
     println!("Secret code one: {}", first);

@@ -1,18 +1,15 @@
 use crate::input;
 
 pub fn main() {
-    let input = match input::read_lines_for_day(3) {
-        Ok(lines) => lines,
-        Err(_) => {
-            eprintln!("Couldn't read inputs\\day_3.txt, using default sequence");
-            vec![
-                "987654321111111".to_string(),
-                "811111111111119".to_string(),
-                "234234234234278".to_string(),
-                "818181911112111".to_string()
-            ]
-        }
-    };
+    let input = input::read_lines_for_day(3).unwrap_or_else(|_| {
+        eprintln!("Couldn't read inputs\\day_3.txt, using default sequence");
+        vec![
+            "987654321111111".to_string(),
+            "811111111111119".to_string(),
+            "234234234234278".to_string(),
+            "818181911112111".to_string()
+        ]
+    });
 
     part_one(&input);
     part_two(&input);

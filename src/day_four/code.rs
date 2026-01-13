@@ -1,24 +1,21 @@
 use crate::input;
 
 pub fn main() {
-    let input = match input::read_lines_for_day(4) {
-        Ok(lines) => lines,
-        Err(_) => {
-            eprintln!("Couldn't read inputs\\day_4.txt, using default sequence");
-            vec![
-                "..@@.@@@@.".to_string(),
-                "@@@.@.@.@@".to_string(),
-                "@@@@@.@.@@".to_string(),
-                "@.@@@@..@.".to_string(),
-                "@@.@@@@.@@".to_string(),
-                ".@@@@@@@.@".to_string(),
-                ".@.@.@.@@@".to_string(),
-                "@.@@@.@@@@".to_string(),
-                ".@@@@@@@@.".to_string(),
-                "@.@.@@@.@.".to_string()
-            ]
-        }
-    };
+    let input = input::read_lines_for_day(4).unwrap_or_else(|_| {
+        eprintln!("Couldn't read inputs\\day_4.txt, using default sequence");
+        vec![
+            "..@@.@@@@.".to_string(),
+            "@@@.@.@.@@".to_string(),
+            "@@@@@.@.@@".to_string(),
+            "@.@@@@..@.".to_string(),
+            "@@.@@@@.@@".to_string(),
+            ".@@@@@@@.@".to_string(),
+            ".@.@.@.@@@".to_string(),
+            "@.@@@.@@@@".to_string(),
+            ".@@@@@@@@.".to_string(),
+            "@.@.@@@.@.".to_string()
+        ]
+    });
 
     let mut matrix = Matrix::new(input.iter().max().unwrap().len() as u32, input.len() as u32);
     for x in 0..input.len() {

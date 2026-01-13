@@ -1,18 +1,15 @@
 use crate::input;
 
 pub fn main() {
-    let input = match input::read_lines_for_day(6) {
-        Ok(lines) => lines,
-        Err(_) => {
-            eprintln!("Couldn't read inputs\\day_6.txt, using default sequence");
-            vec![
-                "123 328  51 64 ".to_string(),
-                " 45 64  387 23 ".to_string(),
-                "  6 98  215 314".to_string(),
-                "*   +   *   +  ".to_string(),
-            ]
-        }
-    };
+    let input = input::read_lines_for_day(6).unwrap_or_else(|_| {
+        eprintln!("Couldn't read inputs\\day_6.txt, using default sequence");
+        vec![
+            "123 328  51 64 ".to_string(),
+            " 45 64  387 23 ".to_string(),
+            "  6 98  215 314".to_string(),
+            "*   +   *   +  ".to_string(),
+        ]
+    });
 
     let first = part_one(Homework::new_list(&input));
     println!("Secret code one: {}", first);
